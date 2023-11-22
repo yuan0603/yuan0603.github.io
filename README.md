@@ -1,5 +1,3 @@
-## Note
-
 [Ubuntu](ubuntu)
 
 [Hadoop](hadoop)
