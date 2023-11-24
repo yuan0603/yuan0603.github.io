@@ -11,6 +11,7 @@ alias grep="grep --color=always"
 ```
 
 * ### .bash_profile
+
 ```bash
 if [ -f ~/.bashrc ]; then 
     source ~/.bashrc 
