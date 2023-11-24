@@ -2,7 +2,7 @@
 
 | Package | Version               |
 | ------- | --------------------- |
-| Ubuntu  | 20.04.6 LTS           |
+| Ubuntu  | 22.04.3 LTS           |
 | OpenJDK | 8                     |
 | Hadoop  | 3.3.6                 |
 | Tez     | 0.10.3-SNAPSHOT       |
