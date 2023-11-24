@@ -1,6 +1,7 @@
 ## Ubuntu
 
 * ### .bash_aliases
+
 ```bash
 alias ll="ls -lAvF --time-style='+%Y-%m-%d %H:%M:%S' --group-directories-first --color=always"
 alias la="ls -lavF --time-style='+%Y-%m-%d %H:%M:%S' --group-directories-first --color=always"
