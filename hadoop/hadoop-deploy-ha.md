@@ -1,4 +1,4 @@
-|Host Name|Host IP Address|Name Node|ZKFailoverController (ZKFC)|Resource Manager|Data Node|Node Manager|Journal Node|ZooKeeper Quorum|
+|Host Name|Host IP Address|Name Node|ZKFailoverController<br/>(ZKFC)|Resource Manager|Data Node|Node Manager|Journal Node|ZooKeeper<br/>Quorum|
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | lab-master-01 | 192.168.90.11 | V | V | V |||||
 | lab-master-02 | 192.168.90.12 | V | V | V |||||
