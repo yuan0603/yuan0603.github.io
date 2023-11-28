@@ -12,3 +12,5 @@
 
 * ### [Tez Build](tez-build.md)
 
+* ### [Hive Build](hive-build.md)
+
