@@ -37,3 +37,7 @@ mvn clean package -DskipTests -Dmaven.javadoc.skip=true -Phadoop28 -P\!hadoop27 
 ```bash
 mvn clean package -DskipTests -Dmaven.javadoc.skip=true -Phadoop28 -P\!hadoop27 -Dprotoc.path=/usr/bin/protoc
 ```
+
+```bash
+mvn clean package -DskipTests -Dmaven.javadoc.skip=true -Dprotobuf.version=3.25.1 -Phadoop28 -P\!hadoop27 | tee tez-build.log
+```
