@@ -1,8 +1,10 @@
 ## 0.10.3-SNAPSHOT
 
+```bash
 git clone https://github.com/apache/tez.git
 
 cd tez
+```
 
 * tez-ui/src/main/webapp/app/routes/server-side-ops.js
 

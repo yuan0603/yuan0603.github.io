@@ -10,5 +10,5 @@
 
 * ### [Hadoop High Availability Deploy](hadoop-deploy-ha.md)
 
-* ### [Hadoop High Availability Deploy](tez-build.md)
+* ### [Tez Build](tez-build.md)
 
