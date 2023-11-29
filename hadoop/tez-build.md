@@ -23,6 +23,8 @@ rowCountOptions: [5, 10, 15, 20, 25, 50, 100],
 ### build
 
 ```bash
+mvn dependency:go-offline
+mvn clean install -DskipTests -U
 mvn clean package -DskipTests -Dmaven.javadoc.skip=true -Phadoop28 -P\!hadoop27
 ```
 
