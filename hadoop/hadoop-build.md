@@ -42,11 +42,11 @@ sudo apt -y install maven
 OR
 
 ```bash
-wget http://ftp.twaren.net/Unix/Web/apache/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.tar.gz
+wget http://ftp.twaren.net/Unix/Web/apache/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
 
-tar zxf apache-maven-3.9.5-bin.tar.gz
+tar zxf apache-maven-3.9.6-bin.tar.gz
 
-sudo mv apache-maven-3.9.5-bin/ /opt/maven
+sudo mv apache-maven-3.9.5/ /opt/maven
 ```
 
 * ### 設定 MAVEN 變數
