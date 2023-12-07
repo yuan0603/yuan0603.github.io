@@ -46,7 +46,7 @@ wget http://ftp.twaren.net/Unix/Web/apache/maven/maven-3/3.9.6/binaries/apache-m
 
 tar zxf apache-maven-3.9.6-bin.tar.gz
 
-sudo mv apache-maven-3.9.5/ /opt/maven
+sudo mv apache-maven-3.9.6/ /opt/maven
 ```
 
 * ### 設定 MAVEN 變數
