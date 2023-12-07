@@ -32,6 +32,7 @@ sudo apt install git -y
 ```
 
 * ### vs code
+
 ```bash
 sudo apt-get install wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
