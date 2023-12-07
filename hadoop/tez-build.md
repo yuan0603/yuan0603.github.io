@@ -3,6 +3,9 @@
 ```bash
 git clone https://github.com/apache/tez.git
 
+# or
+git clone git@github.com:apache/tez.git
+
 cd tez
 ```
 
