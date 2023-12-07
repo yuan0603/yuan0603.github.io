@@ -43,3 +43,9 @@ sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code # or code-insiders
 ```
+
+* ### ssh key
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
