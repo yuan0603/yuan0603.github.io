@@ -199,7 +199,7 @@ mvn package -Pyarn-ui
 * without native code
 
 ```bash
-mvn package -DskipTests -Dmaven.javadoc.skip=true -Pdist,native -Dtar -Pyarn-ui
+mvn package -DskipTests -Dmaven.javadoc.skip=true -Pdist,native -Dtar -Pyarn-ui 2>&1 | tee hadoop-build.log
 ```
 
 * with native code and others
@@ -229,5 +229,6 @@ mvn package -DskipTests -Dmaven.javadoc.skip=true -Pdist,native -Dtar -Pyarn-ui 
 
 -Drequire.pmdk=true \
 -Dbundle.pmdk=true \
--Dpmdk.lib=/usr/lib/x86_64-linux-gnu
+-Dpmdk.lib=/usr/lib/x86_64-linux-gnu \
+2>&1 | tee hadoop-build.log
 ```
