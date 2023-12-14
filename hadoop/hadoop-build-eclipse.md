@@ -1,2 +1,2 @@
 ![Eclipse Java](image/eclipse-java.png "Eclipse Java")
-![Eclipse Maven](image/eclipse-java.png "Eclipse Maven")
+![Eclipse Maven](image/eclipse-maven.png "Eclipse Maven")
