@@ -174,6 +174,9 @@ sudo apt -y install libpmem-dev librpmem-dev libpmemblk-dev libpmemlog-dev libpm
 
 * __build yarn-ui__
 
+nodejs > 14  
+python2  
+
 ```bash
 cd hadoop-yarn-project/hadoop-yarn/hadoop-yarn-ui/src/main/webapp
 
