@@ -196,7 +196,7 @@ yarn run build
 
 cd hadoop-yarn-project/hadoop-yarn/hadoop-yarn-ui
 
-mvn package -Pyarn-ui
+mvn package -DskipTests -Pyarn-ui
 ```
 
 * without native code
