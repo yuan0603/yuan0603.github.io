@@ -49,3 +49,5 @@ sudo apt install code # or code-insiders
 ```bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
+* ### chrome
+https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
