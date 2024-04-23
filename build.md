@@ -196,6 +196,12 @@ ref: [https://github.com/apache/hadoop/blob/branch-3.4.0/BUILDING.txt](https://g
 
 * ### Building Hadoop
 
+    ```bash
+    git clone https://github.com/apache/hadoop.git
+    cd hadoop
+    git checkout rel/release-3.4.0
+    ```
+
     modify ***hadoop-project/pom.xml***
 
     ```xml
