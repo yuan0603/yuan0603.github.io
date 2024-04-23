@@ -149,13 +149,13 @@ ref: [https://github.com/apache/hadoop/blob/branch-3.4.0/BUILDING.txt](https://g
 
     * #### Snappy compression (only used for hadoop-mapreduce-client-nativetask)
 
-    `sudo apt -y install libsnappy-dev`
+        `sudo apt -y install libsnappy-dev`
 
     * #### Intel ISA-L library for erasure coding
 
-    `sudo apt -y install libisal-dev`
+        `sudo apt -y install libisal-dev`
 
-    or
+        or
 
     ```bash
     git clone https://github.com/intel/isa-l
