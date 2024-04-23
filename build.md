@@ -117,7 +117,7 @@ ref: [https://github.com/apache/hadoop/blob/branch-3.4.0/BUILDING.txt](https://g
 
     ```bash
     sudo apt -y install autoconf automake libtool curl make g++ unzip
-    git clone https://github.com/protocolbuffers/protobuf.github
+    git clone https://github.com/protocolbuffers/protobuf.git
     cd protobuf
     git checkout v3.21.12
     git submodule update --init --recursive
