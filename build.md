@@ -132,7 +132,7 @@ protoc --version
 
 * ### Boost
 
-`sudo apt -y install libboost-dev`
+`sudo apt -y install libboost-all-dev`
 
 or
 
@@ -172,7 +172,7 @@ sudo make install
 
 * #### Linux FUSE
 
-`sudo apt install fuse libfuse-dev`
+`sudo apt install libfuse3-dev`
 
 * #### ZStandard compression
 
@@ -232,18 +232,27 @@ mvn package -DskipTests -Dmaven.javadoc.skip=true -Pdist,native -Dtar -Pyarn-ui 
 
 -Drequire.snappy \
 -Dbundle.snappy \
+-Dsnappy.prefix=/usr/lib/x86_64-linux-gnu \
+-Dsnappy.lib=/usr/lib/x86_64-linux-gnu \
 
 -Drequire.zstd \
 -Dbundle.zstd \
+-Dzstd.prefix=/usr/lib/x86_64-linux-gnu \
+-Dzstd.lib=/usr/lib/x86_64-linux-gnu \
 
 -Drequire.openssl \
 -Dbundle.openssl \
+-Dopenssl.prefix=/usr/lib/x86_64-linux-gnu \
+-Dopenssl.lib=/usr/lib/x86_64-linux-gnu \
 
 -Drequire.isal \
 -Dbundle.isal \
+-Disal.prefix=/usr/lib/x86_64-linux-gnu \
+-Disal.lib=/usr/lib/x86_64-linux-gnu \
 
 -Drequire.pmdk \
--Dbundle.pmdk
+-Dbundle.pmdk \
+-Dpmdk.lib=/usr/lib/x86_64-linux-gnu
 ```
 
 # Tez
