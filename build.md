@@ -147,53 +147,54 @@ ref: [https://github.com/apache/hadoop/blob/branch-3.4.0/BUILDING.txt](https://g
 
 * ### Optional packages:
 
-* #### Snappy compression (only used for hadoop-mapreduce-client-nativetask)
+  * ### Snappy compression (only used for hadoop-mapreduce-client-nativetask)
 
-  `sudo apt -y install libsnappy-dev`
+    `sudo apt -y install libsnappy-dev`
 
-* #### Intel ISA-L library for erasure coding
+  * ### Intel ISA-L library for erasure coding
 
-  `sudo apt -y install libisal-dev`
+    `sudo apt -y install libisal-dev`
 
-  or
+    or
 
-  ```bash
-  git clone https://github.com/intel/isa-l
-  cd isa-l
-  ./autogen.sh
-  ./configure
-  make -j$(nproc)
-  sudo make install
-  ```
+    ```bash
+    git clone https://github.com/intel/isa-l
+    cd isa-l
+    ./autogen.sh
+    ./configure
+    make -j$(nproc)
+    sudo make install
+    ```
 
-* #### Bzip2
+  * ### Bzip2
 
-  `sudo apt install bzip2 libbz2-dev`
+    `sudo apt install bzip2 libbz2-dev`
 
-* #### Linux FUSE
+  * ### Linux FUSE
 
-  `sudo apt install libfuse3-dev`
+    `sudo apt install libfuse3-dev`
 
-* #### ZStandard compression
+  * ### ZStandard compression
 
-  `sudo apt install libzstd-dev`
+    `sudo apt install libzstd-dev`
 
-* #### PMDK library for storage class memory(SCM) as HDFS cache backend
+  * ### PMDK library for storage class memory(SCM) as HDFS cache backend
 
-  ref: [http://pmem.io/](http://pmem.io/) and [https://github.com/pmem/pmdk](https://github.com/pmem/pmdk)
+    ref: [http://pmem.io/](http://pmem.io/) and [https://github.com/pmem/pmdk](https://github.com/pmem/pmdk)
+
+    #### ***All Development:***
+
+    `sudo apt -y install libpmem-dev librpmem-dev libpmemblk-dev libpmemlog-dev libpmemobj-dev libpmempool-dev libpmempool-dev`
+
+    #### All Runtime:
+
+    `sudo apt -y install libpmem1 librpmem1 libpmemblk1 libpmemlog1 libpmemobj1 libpmempool1`
+
+
+    #### All Debug:
+
+    `sudo apt -y install libpmem1-debug librpmem1-debug libpmemblk1-debug libpmemlog1-debug libpmemobj1-debug libpmempool1-debug`
   
-  All Runtime:
-  
-  `sudo apt -y install libpmem1 librpmem1 libpmemblk1 libpmemlog1 libpmemobj1 libpmempool1`
-  
-  ***All Development:***
-  
-  `sudo apt -y install libpmem-dev librpmem-dev libpmemblk-dev libpmemlog-dev libpmemobj-dev libpmempool-dev libpmempool-dev`
-  
-  All Debug:
-  
-  `sudo apt -y install libpmem1-debug librpmem1-debug libpmemblk1-debug libpmemlog1-debug libpmemobj1-debug libpmempool1-debug`
-
 * ### Building Hadoop
 
   ```bash
@@ -221,11 +222,11 @@ ref: [https://github.com/apache/hadoop/blob/branch-3.4.0/BUILDING.txt](https://g
   <yarnpkg.version>v1.22.19</yarnpkg.version>
   ```
 
-  * #### without native code
+  * ### without native code
 
     `mvn package -DskipTests -Dmaven.javadoc.skip=true -Pdist,native -Dtar -Pyarn-ui`
 
-  * #### with native code and others
+  * ### with native code and others
 
     ```bash
     mvn package -DskipTests -Dmaven.javadoc.skip=true -Pdist,native -Dtar -Pyarn-ui \
