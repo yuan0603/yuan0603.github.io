@@ -43,10 +43,10 @@ ref: [https://github.com/apache/hadoop/blob/branch-3.4.0/BUILDING.txt](https://g
 
 * ### Open JDK 1.8
 
-```bash
-sudo apt update
-sudo apt -y install openjdk-8-jdk
-```
+  ```bash
+  sudo apt update
+  sudo apt -y install openjdk-8-jdk
+  ```
 
 `nano ~/.bashrc`
 
