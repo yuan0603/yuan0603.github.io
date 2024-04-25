@@ -93,167 +93,167 @@ ref: [https://github.com/apache/hadoop/blob/branch-3.4.0/BUILDING.txt](https://g
 
 * ### Native libraries
 
-`sudo apt -y install build-essential autoconf automake libtool zlib1g-dev pkg-config libssl-dev libsasl2-dev`
+  `sudo apt -y install build-essential autoconf automake libtool zlib1g-dev pkg-config libssl-dev libsasl2-dev`
 
 * ### CMake
 
-`sudo apt -y install cmake`
+  `sudo apt -y install cmake`
 
-or
+  or
 
-```bash
-git clone https://github.com/Kitware/CMake.git
-cd CMake
-./bootstrap
-make -j$(nproc)
-sudo make install
-```
+  ```bash
+  git clone https://github.com/Kitware/CMake.git
+  cd CMake
+  ./bootstrap
+  make -j$(nproc)
+  sudo make install
+  ```
 
-`cmake -version`
+  `cmake -version`
 
 * ### Protocol Buffers (required to build native code)
 
-ref: [https://github.com/protocolbuffers/protobuf/blob/v3.21.12/src/README.md](https://github.com/protocolbuffers/protobuf/blob/v3.21.12/src/README.md)
+  ref: [https://github.com/protocolbuffers/protobuf/blob/v3.21.12/src/README.md](https://github.com/protocolbuffers/protobuf/blob/v3.21.12/src/README.md)
 
-```bash
-sudo apt -y install autoconf automake libtool curl make g++ unzip
-git clone https://github.com/protocolbuffers/protobuf.git
-cd protobuf
-git checkout v3.21.12
-git submodule update --init --recursive
-./autogen.sh
-./configure
-make -j$(nproc)
-make check
-sudo make install
-sudo ldconfig
-protoc --version
-```
+  ```bash
+  sudo apt -y install autoconf automake libtool curl make g++ unzip
+  git clone https://github.com/protocolbuffers/protobuf.git
+  cd protobuf
+  git checkout v3.21.12
+  git submodule update --init --recursive
+  ./autogen.sh
+  ./configure
+  make -j$(nproc)
+  make check
+  sudo make install
+  sudo ldconfig
+  protoc --version
+  ```
 
 * ### Boost
 
-`sudo apt -y install libboost-all-dev`
+  `sudo apt -y install libboost-all-dev`
 
-or
+  or
 
-```bash
-wget https://boostorg.jfrog.io/artifactory/main/release/1.85.0/source/boost_1_85_0.tar.bz2
-tar --bzip2 -xf boost_1_85_0.tar.bz2
-cd boost_1_85_0
-./bootstrap.sh --prefix=/usr/
-./b2 --without-python
-sudo ./b2 --without-python install
-```
+  ```bash
+  wget https://boostorg.jfrog.io/artifactory/main/release/1.85.0/source/boost_1_85_0.tar.bz2
+  tar --bzip2 -xf boost_1_85_0.tar.bz2
+  cd boost_1_85_0
+  ./bootstrap.sh --prefix=/usr/
+  ./b2 --without-python
+  sudo ./b2 --without-python install
+  ```
 
 * ### Optional packages:
 
 * #### Snappy compression (only used for hadoop-mapreduce-client-nativetask)
 
-`sudo apt -y install libsnappy-dev`
+  `sudo apt -y install libsnappy-dev`
 
 * #### Intel ISA-L library for erasure coding
 
-`sudo apt -y install libisal-dev`
+  `sudo apt -y install libisal-dev`
 
-or
+  or
 
-```bash
-git clone https://github.com/intel/isa-l
-cd isa-l
-./autogen.sh
-./configure
-make -j$(nproc)
-sudo make install
-```
+  ```bash
+  git clone https://github.com/intel/isa-l
+  cd isa-l
+  ./autogen.sh
+  ./configure
+  make -j$(nproc)
+  sudo make install
+  ```
 
 * #### Bzip2
 
-`sudo apt install bzip2 libbz2-dev`
+  `sudo apt install bzip2 libbz2-dev`
 
 * #### Linux FUSE
 
-`sudo apt install libfuse3-dev`
+  `sudo apt install libfuse3-dev`
 
 * #### ZStandard compression
 
-`sudo apt install libzstd-dev`
+  `sudo apt install libzstd-dev`
 
 * #### PMDK library for storage class memory(SCM) as HDFS cache backend
 
-ref: [http://pmem.io/](http://pmem.io/) and [https://github.com/pmem/pmdk](https://github.com/pmem/pmdk)
-
-All Runtime:
-
-`sudo apt -y install libpmem1 librpmem1 libpmemblk1 libpmemlog1 libpmemobj1 libpmempool1`
-
-***All Development:***
-
-`sudo apt -y install libpmem-dev librpmem-dev libpmemblk-dev libpmemlog-dev libpmemobj-dev libpmempool-dev libpmempool-dev`
-
-All Debug:
-
-`sudo apt -y install libpmem1-debug librpmem1-debug libpmemblk1-debug libpmemlog1-debug libpmemobj1-debug libpmempool1-debug`
+  ref: [http://pmem.io/](http://pmem.io/) and [https://github.com/pmem/pmdk](https://github.com/pmem/pmdk)
+  
+  All Runtime:
+  
+  `sudo apt -y install libpmem1 librpmem1 libpmemblk1 libpmemlog1 libpmemobj1 libpmempool1`
+  
+  ***All Development:***
+  
+  `sudo apt -y install libpmem-dev librpmem-dev libpmemblk-dev libpmemlog-dev libpmemobj-dev libpmempool-dev libpmempool-dev`
+  
+  All Debug:
+  
+  `sudo apt -y install libpmem1-debug librpmem1-debug libpmemblk1-debug libpmemlog1-debug libpmemobj1-debug libpmempool1-debug`
 
 * ### Building Hadoop
 
-```bash
-git clone https://github.com/apache/hadoop.git
-cd hadoop
-git checkout rel/release-3.4.0
-```
+  ```bash
+  git clone https://github.com/apache/hadoop.git
+  cd hadoop
+  git checkout rel/release-3.4.0
+  ```
 
-modify ***hadoop-project/pom.xml***
+  modify ***hadoop-project/pom.xml***
 
-```xml
-<!-- <slf4j.version>1.7.36</slf4j.version> -->
-<slf4j.version>2.0.13</slf4j.version>
+  ```xml
+  <!-- <slf4j.version>1.7.36</slf4j.version> -->
+  <slf4j.version>2.0.13</slf4j.version>
+  
+  <!-- <protobuf.version>2.5.0</protobuf.version> -->
+  <protobuf.version>3.21.12</protobuf.version>
+  
+  <!-- <zookeeper.version>3.8.3</zookeeper.version> -->
+  <zookeeper.version>3.8.4</zookeeper.version>
+  
+  <!-- <nodejs.version>v12.22.1</nodejs.version> -->
+  <nodejs.version>v12.22.12</nodejs.version>
+  
+  <!-- <yarnpkg.version>v1.22.5</yarnpkg.version> -->
+  <yarnpkg.version>v1.22.19</yarnpkg.version>
+  ```
 
-<!-- <protobuf.version>2.5.0</protobuf.version> -->
-<protobuf.version>3.21.12</protobuf.version>
+  * #### without native code
 
-<!-- <zookeeper.version>3.8.3</zookeeper.version> -->
-<zookeeper.version>3.8.4</zookeeper.version>
+    `mvn package -DskipTests -Dmaven.javadoc.skip=true -Pdist,native -Dtar -Pyarn-ui`
 
-<!-- <nodejs.version>v12.22.1</nodejs.version> -->
-<nodejs.version>v12.22.12</nodejs.version>
+  * #### with native code and others
 
-<!-- <yarnpkg.version>v1.22.5</yarnpkg.version> -->
-<yarnpkg.version>v1.22.19</yarnpkg.version>
-```
-
-* #### without native code
-
-`mvn package -DskipTests -Dmaven.javadoc.skip=true -Pdist,native -Dtar -Pyarn-ui`
-
-* #### with native code and others
-
-```bash
-mvn package -DskipTests -Dmaven.javadoc.skip=true -Pdist,native -Dtar -Pyarn-ui \
-
--Drequire.snappy \
--Dbundle.snappy \
--Dsnappy.prefix=/usr/lib/x86_64-linux-gnu \
--Dsnappy.lib=/usr/lib/x86_64-linux-gnu \
-
--Drequire.zstd \
--Dbundle.zstd \
--Dzstd.prefix=/usr/lib/x86_64-linux-gnu \
--Dzstd.lib=/usr/lib/x86_64-linux-gnu \
-
--Drequire.openssl \
--Dbundle.openssl \
--Dopenssl.prefix=/usr/lib/x86_64-linux-gnu \
--Dopenssl.lib=/usr/lib/x86_64-linux-gnu \
-
--Drequire.isal \
--Dbundle.isal \
--Disal.prefix=/usr/lib/x86_64-linux-gnu \
--Disal.lib=/usr/lib/x86_64-linux-gnu \
-
--Drequire.pmdk \
--Dbundle.pmdk \
--Dpmdk.lib=/usr/lib/x86_64-linux-gnu
-```
+    ```bash
+    mvn package -DskipTests -Dmaven.javadoc.skip=true -Pdist,native -Dtar -Pyarn-ui \
+    
+    -Drequire.snappy \
+    -Dbundle.snappy \
+    -Dsnappy.prefix=/usr/lib/x86_64-linux-gnu \
+    -Dsnappy.lib=/usr/lib/x86_64-linux-gnu \
+    
+    -Drequire.zstd \
+    -Dbundle.zstd \
+    -Dzstd.prefix=/usr/lib/x86_64-linux-gnu \
+    -Dzstd.lib=/usr/lib/x86_64-linux-gnu \
+    
+    -Drequire.openssl \
+    -Dbundle.openssl \
+    -Dopenssl.prefix=/usr/lib/x86_64-linux-gnu \
+    -Dopenssl.lib=/usr/lib/x86_64-linux-gnu \
+    
+    -Drequire.isal \
+    -Dbundle.isal \
+    -Disal.prefix=/usr/lib/x86_64-linux-gnu \
+    -Disal.lib=/usr/lib/x86_64-linux-gnu \
+    
+    -Drequire.pmdk \
+    -Dbundle.pmdk \
+    -Dpmdk.lib=/usr/lib/x86_64-linux-gnu
+    ```
 
 # Tez
 
@@ -294,7 +294,7 @@ rowCountOptions: [5, 10, 15, 20, 25, 50, 100],
 
 * ### Building Tez
 
-`mvn clean package -DskipTests -Dmaven.javadoc.skip=true -Phadoop28 -P\!hadoop27`
+  `mvn clean package -DskipTests -Dmaven.javadoc.skip=true -Phadoop28 -P\!hadoop27`
 
 # Hive
 
@@ -318,4 +318,4 @@ modify ***pom.xml***
 
 * ### Building Hive
 
-`mvn clean package -DskipTests -Dmaven.javadoc.skip=true -Pdist -Drat.skip=true`
+  `mvn clean package -DskipTests -Dmaven.javadoc.skip=true -Pdist -Drat.skip=true`
