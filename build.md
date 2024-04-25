@@ -44,8 +44,8 @@ ref: [https://github.com/apache/hadoop/blob/branch-3.4.0/BUILDING.txt](https://g
 * ### Open JDK 1.8
 
   ```bash
-    sudo apt update
-    sudo apt -y install openjdk-8-jdk
+  sudo apt update
+  sudo apt -y install openjdk-8-jdk
   ```
 
   `nano ~/.bashrc`
@@ -65,31 +65,31 @@ ref: [https://github.com/apache/hadoop/blob/branch-3.4.0/BUILDING.txt](https://g
 
 * ### Maven
 
-    `sudo apt -y install maven`
+  `sudo apt -y install maven`
 
-    or
+  or
 
-    ```bash
-    wget http://ftp.twaren.net/Unix/Web/apache/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
-    tar -zxf apache-maven-3.9.6-bin.tar.gz
-    sudo mv apache-maven-3.9.6 /opt/maven
-    ```
+  ```bash
+  wget http://ftp.twaren.net/Unix/Web/apache/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
+  tar -zxf apache-maven-3.9.6-bin.tar.gz
+  sudo mv apache-maven-3.9.6 /opt/maven
+  ```
 
-    `nano ~/.bashrc`
+  `nano ~/.bashrc`
 
-    ```bash
-    # M2_HOME
-    export M2_HOME=/opt/maven
-    export MAVEN_HOME=$M2_HOME
-    export PATH=$PATH:$M2_HOME/bin
-    ```
+  ```bash
+  # M2_HOME
+  export M2_HOME=/opt/maven
+  export MAVEN_HOME=$M2_HOME
+  export PATH=$PATH:$M2_HOME/bin
+  ```
 
-    `source ~/.bashrc`
+  `source ~/.bashrc`
 
-    ```bash
-    echo $M2_HOME
-    mvn -v
-    ```
+  ```bash
+  echo $M2_HOME
+  mvn -v
+  ```
 
 * ### Native libraries
 
