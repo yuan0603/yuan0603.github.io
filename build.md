@@ -47,21 +47,21 @@ ref: [https://github.com/apache/hadoop/blob/branch-3.4.0/BUILDING.txt](https://g
   sudo apt update
   sudo apt -y install openjdk-8-jdk
   ```
+ 
+  `nano ~/.bashrc`    
 
-`nano ~/.bashrc`
+  ```bash
+  # JAVA_HOME
+  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+  export PATH=$PATH:$JAVA_HOME/bin
+  ```
 
-```bash
-# JAVA_HOME
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export PATH=$PATH:$JAVA_HOME/bin
-```
+  `source ~/.bashrc`
 
-`source ~/.bashrc`
-
-```bash
-echo $JAVA_HOME
-java -version
-```
+  ```bash
+  echo $JAVA_HOME
+  java -version
+  ```
 
 * ### Maven
 
