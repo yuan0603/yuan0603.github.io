@@ -320,3 +320,60 @@ modify ***pom.xml***
 * ### Building Hive
 
   `mvn clean package -DskipTests -Dmaven.javadoc.skip=true -Pdist -Drat.skip=true`
+
+* ### metastore
+
+  ```bash
+  sudo mysql;
+
+  ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'admin';
+  ```
+
+  `sudo mysql_secure_installation`
+
+  ```bash
+  CREATE DATABASE hivedb;
+
+  CREATE USER 'hive'@'localhost' IDENTIFIED WITH caching_sha2_password BY '!QAZ2wsx';
+  CREATE USER 'hive'@'%' IDENTIFIED WITH caching_sha2_password BY '!QAZ2wsx';
+
+  GRANT ALL PRIVILEGES ON hivedb.* TO 'hive'@'localhost';
+  GRANT ALL PRIVILEGES ON hivedb.* TO 'hive'@'%';
+
+  FLUSH PRIVILEGES;
+
+  SHOW GRANTS FOR 'hive'@'localhost';
+  SHOW GRANTS FOR 'hive'@'%';
+  SHOW PRIVILEGES FOR 'hive'@'localhost';
+  SHOW PRIVILEGES FOR 'hive'@'%';
+
+  REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'hive'@'localhost';
+  REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'hive'@'%';
+
+  QUIT;
+  ```
+
+安裝 mysql-connector-j_8.4.0-1ubuntu24.04_all.deb
+
+ln -s /usr/share/java/mysql-connector-j-8.4.0.jar
+
+設定 hive-site.xml
+
+```
+屬性 : javax.jdo.option.ConnectionURL
+值   : jdbc:mysql://localhost:3306/metastore_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;characterEncoding=UTF-8
+
+屬性 : javax.jdo.option.ConnectionDriverName
+值   : com.mysql.jdbc.Driver
+
+屬性 : javax.jdo.option.ConnectionUserName
+值   : dbuser
+
+屬性 : javax.jdo.option.ConnectionPassword
+值   : (mysql 使用者密碼)
+```
+
+初始化 hivedb
+
+`schematool -dbType mysql -initSchema`
+
